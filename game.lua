@@ -21,7 +21,7 @@ local ingameBoundaryX2 = 0
 local ingameCalculatedScreenResX = 512*1
 
 --Should the game play itself?
-autoPlay = true
+autoPlay = false -- TODO: MAKE A SETTING TO ENABLE/DISABLE THIS OR KEYBIND IT (CTRL) 
 
 --Positional vars/Control Vars
 local nextNote = 1
