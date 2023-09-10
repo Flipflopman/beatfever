@@ -77,7 +77,7 @@ function Song:init(path, file)
 	if fileLoaded then
 		
 		if parser.getBGFile() ~= "error" then --Unable to parse BG file? Fallback to blue background
-			if love.filesystem.isFile(self.path.."/"..parser.getBGFile()) == true then
+			if love.filesystem.getInfo(self.path.."/"..parser.getBGFile(),"file") then --.isFile
 				self.BGFilePath = self.path.."/"..parser.getBGFile()
 			else
 				debugLog("Parser returned a BG file, but it doesn't exist!")
