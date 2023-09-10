@@ -13,7 +13,7 @@ function parser.loadOsuFile(file)
 	fileLoaded = file
 	fileLines = {}
 	--debugLog("Processando arquivo '" .. file .. "'...", 1, moduleName)
-	if love.filesystem.isFile(file) then 
+	if love.filesystem.getInfo(file,"file") then 
 		for line in love.filesystem.lines(file) do
 			table.insert(fileLines, line)		--Needs to check if the file really exists or not, otherwise, wild crashes may occur.
 		end
