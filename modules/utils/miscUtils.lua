@@ -58,7 +58,8 @@ function getOsuFiles(folder)
 	
 	for i, v in ipairs(filesTable) do
 		local file = folder .. "/" .. v
-		if lfs.isDirectory(file) then
+		--if lfs.isDirectory(file) then
+		if lfs.getInfo(file,"directory") then
 			local songDirFiles = lfs.getDirectoryItems(file)
 			
 			for i, v in ipairs(songDirFiles) do
