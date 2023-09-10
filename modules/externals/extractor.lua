@@ -2,7 +2,7 @@ local lfs = love.filesystem
 
 local function enu(folder, saveDir)
    local filesTable = lfs.getDirectoryItems(folder)
-   if saveDir ~= "" and not lfs.isDirectory(saveDir) then lfs.createDirectory(saveDir) end
+   if saveDir ~= "" and not lfs.getInfo(saveDir,"directory") then lfs.createDirectory(saveDir) end
    
    for i,v in ipairs(filesTable) do
       local file = folder.."/"..v
