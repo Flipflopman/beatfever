@@ -71,7 +71,7 @@ function splashLoad()
 	end
 	-- Menu click sound
 	debugLog("Loading splash screen sound effects", 1, moduleName)
-	logoClickSound = love.audio.newSource("uisounds/selectLogo.ogg")
+	logoClickSound = love.audio.newSource("uisounds/selectLogo.ogg","stream")
 	
 	-- The amount of frequencies to obtain as result of the FFT process.
 	Size = 1024 
