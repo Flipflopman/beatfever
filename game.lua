@@ -21,7 +21,7 @@ local ingameBoundaryX2 = 0
 local ingameCalculatedScreenResX = 512*1
 
 --Should the game play itself?
-autoPlay = true
+autoPlay = false -- TODO: MAKE A SETTING TO ENABLE/DISABLE THIS OR KEYBIND IT (CTRL) 
 
 --Positional vars/Control Vars
 local nextNote = 1
@@ -224,7 +224,8 @@ function gameUpdate(dt)
 							combo = combo + 1
 							alphaEffect = 255
 							fx:stop()
-							fx:rewind()
+							--fx:rewind()
+							fx:seek(0,"seconds")
 							fx:setVolume(0.5)
 							fx:play()
 							--Emit particles
