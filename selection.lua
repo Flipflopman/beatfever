@@ -225,9 +225,9 @@ function love.filedropped(file)
 	if getFileExtension(filePath) == ".osz" and Screen == 1 then
 		print("Installing a new .osz file!")
 		fileNameFull = filePath:match("([^\\/]-%.?)$") --I could use a single pattern to get everything i wanted..
-		fileName = string.match(fileNameFull, "(.+)%.") -- Too bad i find patterns very confusing.. someone might be able to pull this off on one line
+		fileName = string.match(fileNameFull, "(.+)%.") -- Too bad i find patterns very confusing.. someone might be able to pull this off on one line <--- hahahaha hell no
 		love.timer.sleep(0.01)
-		if not love.filesystem.exists(fileName) then
+		if not love.filesystem.exists(fileName) then --.exists
 			extractZIP(filePath, fileName, false)
 			print("Done!")
 			reloadSelectionScreen = true
