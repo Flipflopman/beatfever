@@ -224,7 +224,8 @@ function gameUpdate(dt)
 							combo = combo + 1
 							alphaEffect = 255
 							fx:stop()
-							fx:rewind()
+							--fx:rewind()
+							fx:seek(0,"seconds")
 							fx:setVolume(0.5)
 							fx:play()
 							--Emit particles
