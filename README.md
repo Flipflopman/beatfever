@@ -9,6 +9,9 @@
 >**Current state:** _Repair_
 Since a this games original source code is built on love 10.1 and hasn't been touched in 7 years, I have to revamp most of the source code to make it not crash on start. After that, I'll start working on optimizations.
 
+# How to Build
+You can follow this guide: ![Love2d Build Guide](https://love2d.org/wiki/Game_Distribution)
+or you can go to the game directory, and run `love .` to test the game.
 
 # FAQ ~ Frequently Asked Questions
 #### What's this?
