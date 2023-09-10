@@ -21,7 +21,7 @@ Also, this project strives to keep it's code as simple and clean as possible.
 
 #### Where does it run? What are the requirements?
 Currently, _BeatFever_ runs with _minor_ modifications in Android, iOS(untested), RaspberryPi (B+ or newer) and with no modifications at all on Windows, MacOS and Linux.
-On desktop systems, anything that supports OpenGLES 2.1 or OpenGL 2 and has anything that _vaguely resembles a processor_ should run this with no issues.
+On desktop systems, anything that supports OpenGLES 2.1 or OpenGL 2 and has anything that _vaguely resembles a processor_ should run this with no issues. Also, this will only run on love2d 11.3 or higher.
 
 #### What's done and what's coming up next?
 The game in itself works already, but hasn't all the mechanics implemented yet. Song installation and selection works, but still needs updates. We're aiming at an eventual storyboard support aswell.
