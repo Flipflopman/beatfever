@@ -799,7 +799,7 @@ _G["love"].run = function()
 				_Debug.liveLastModified = love.filesystem.getLastModified(_DebugSettings.LiveFile)
 			end
 		end -- will pass 0 if love.timer is disabled
-		if love.window and love.graphics and love.window.isCreated() then
+		if love.window and love.graphics and love.window.isOpen() then
 			love.graphics.clear()
 			love.graphics.origin()
 			if love.draw then if _Debug.liveDo then _Debug.hotSwapDraw() _Debug.liveDo=false end xpcall(love.draw, _Debug.handleError) end
