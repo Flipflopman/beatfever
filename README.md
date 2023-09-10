@@ -2,7 +2,7 @@
 
 ![Beatfever logo](http://i.imgur.com/5zG4Sum.png)
 
-![love2D version](https://img.shields.io/badge/Love2D-0.11.1-EA316E.svg)
+![love2D version](https://img.shields.io/badge/Love2D-0.11.4-EA316E.svg)
 
 ![beatfever](https://cloud.githubusercontent.com/assets/57977/17342490/f5032d10-58cf-11e6-8f58-e3c897efe11f.gif)
 
