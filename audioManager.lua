@@ -61,7 +61,7 @@ function getCurrentMusic()
 end
 
 function musicRewind()
-	love.audio.rewind(songPlay)
+	songPlay:seek(1,"seconds")
 	debugLog("Music has been rewound!", 2, moduleName)
 end
 
