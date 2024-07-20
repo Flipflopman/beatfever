@@ -13,6 +13,8 @@ require("modules/gameObjects") 		 -- Now we create the objects we need in order 
 require("modules/externals/lovedebug") --Unexpected crashes often get handled by this, also provides a nice console
 require("game")
 require("modules/externals/extractor")
+require("rpcManager")
+
 bit = require("bit")
 
 reloadSelectionScreen = false
@@ -23,7 +25,6 @@ debuggingEnabled = false
 
 -- Module name for debug infos
 local moduleName = "[MainThread]"
-
 -- Debug infos
 debugTimer()
 debugLog("BeatFever Mania Debugger, v0.8 =-=-=-=", 1, moduleName)
@@ -55,6 +56,8 @@ newMouseClicked = nil
 mouseTrail = 10
 
 function love.load()
+	debugInit()	
+	
 	mx, my = love.mouse.getPosition()
 	mouseScreenX, mouseScreenY = mx, my
 	
@@ -69,10 +72,14 @@ function love.load()
 	
 
 	splashLoad()
+	int_discordRPC()
 end
 
 function love.update(dt)
     --MouseTrail
+	
+	 
+	update_discordRPC()
 	mx, my = love.mouse.getPosition()
 	mouseScreenX, mouseScreenY = mx, my
 	mouseInfo = {X = mouseScreenX, Y = mouseScreenY}
@@ -141,6 +148,8 @@ function love.update(dt)
 	--musicVolume(0)
 end
 
+
+
 function love.draw()
 	
 	-- Screen switcharoo magic
@@ -173,6 +182,10 @@ function love.draw()
       return
 	end
 	love.timer.sleep(next_time - cur_time)
+end
+
+function love.quit()
+	shutdown_rpc()
 end
 
 -- TODO list

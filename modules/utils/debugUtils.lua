@@ -1,5 +1,14 @@
 -- Debug utilities for Love2d and Beatfever debugging
+local dbglg = {}
 debugFont = love.graphics.newFont("fonts/bignoodle.ttf", 16)
+
+function debugInit()
+	if love.filesystem.getInfo("current.log","file")~=nil then
+		love.filesystem.write("current.log","")
+	else
+		love.filesystem.newFile("current.log")
+	end
+end
 
 function debugTimer()
 startTime = love.timer.getTime()
@@ -20,7 +29,7 @@ function debugLog(text, level, moduleName)
 	if level == 3 then
 		print(round(debugTime, 2).." \t"..moduleName.." CRITICAL: \t" .. text)
 	end
-	
+	love.filesystem.append("current.log","["..tostring(os.date("%x %X",os.time())).."] "..text.."\n")
 end
 
 function debugDrawObjectBoundaries(boundaries)
@@ -51,4 +60,7 @@ function debugDrawObjectBoundaries(boundaries)
 		love.graphics.print("X: "..mx.." Y: "..my, mx-28, my-23)
 		love.graphics.setFont(font)
 	end
+ end
+ 
+ function debugWriteLog()
  end
