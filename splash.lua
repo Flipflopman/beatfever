@@ -17,7 +17,7 @@ local openTimeEnd = 0
 local menuTime = 0
 
 -- Background music
-local Song = "Songs/song.mp3" 	-- You have to put your songs somewhere along the main.lua file, so love2d can access it. Then, just point this string to the song you wish to use.
+local Song = "Songs/Menu.mp3"
 local hasBeenLoaded = false
 
 -- Logo rotation angle
