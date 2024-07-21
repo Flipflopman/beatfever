@@ -1,21 +1,33 @@
 local moduleName = "[RPC Manager]"
---local AppId = "" --// This is an app i made on discord, feel free to change it. <-- disable cause discord is weird asf 
+local AppId = "1264350096108028017"
 local State = "In the menu"
-local details = "sigma"
+local details = "AFK"
 local rpc = require("discordRPC")
-local rpcenabled = false
+local rpcenabled = true
 
 function int_discordRPC()
+
+	if love.system.getOS()~="Windows" then rpcenabled=false end --// The RPC binding i use doesn't work with mac or linux, maybe Ill find some alternatives in the future.
+
 	if not rpcenabled then return end
 	rpc.initialize(AppId, true)
     local now = os.time(os.date("*t"))
     presence = {
         state = State,
-        details = "sigma",
+        details = details,
         startTimestamp = now,
-		smallImageKey="logomain",
+		largeImageKey="logoround",
+		largeImageText="Beatfever",
     }
 	nextPresenceUpdate = 0
+end
+
+function rpc_setState(state)
+	presence.state = state
+end
+
+function rpc_setDetails(details)
+	presence.details = details
 end
 
 function update_discordRPC()

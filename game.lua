@@ -88,6 +88,8 @@ function gameLoad(selectedSong)
 	
 	
 	--Parse stuff and load music
+	rpc_setDetails("Hitting circles")
+	rpc_setState(selectedSong.artist.." - "..selectedSong.name)
 	debugLog("Parsing selected file", 1, moduleName)
 	parser.loadOsuFile(selectedSong.filePath)
 	loadSong(selectedSong.audioFile)
@@ -192,6 +194,11 @@ function gameUpdate(dt)
 		run = true
 	else
 		run = false
+	end
+	if love.keyboard.isDown("escape") then
+		gameDispose()
+		gameOverLoad(0, 0)
+		Screen = 3
 	end
 	
 	--Notelist update
@@ -450,6 +457,12 @@ function gameReset()
 	noteMisses = 1
 	block = 1
 	redAlert = 255
+end
+
+function gameExit()
+	gameDispose()
+	--gameOverLoad(scoreAdd, precision)
+	Screen = 3
 end
 
 --THOUGHTS

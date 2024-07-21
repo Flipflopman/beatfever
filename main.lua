@@ -73,6 +73,8 @@ function love.load()
 
 	splashLoad()
 	int_discordRPC()
+	rpc_setState("In the menu")
+	rpc_setDetails(nil)
 end
 
 function love.update(dt)
