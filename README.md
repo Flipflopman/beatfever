@@ -20,7 +20,7 @@ Currently the one and probably only implemented gamemode is "Catch the Beat", wh
 Also, this project strives to keep it's code as simple and clean as possible.
 
 #### Where does it run? What are the requirements?
-Currently, _BeatFever_ runs with _minor_ modifications in Android, iOS(untested), RaspberryPi (B+ or newer) and with no modifications at all on Windows, MacOS and Linux.
+Currently, _BeatFever_ runs with _major_ modifications on Android, theoretically on iOS (untested), RaspberryPi 4+ (I tested it on a pi4, it was almost unplayable.) and with no modifications at all on Windows, MacOS and Linux.
 On desktop systems, anything that supports OpenGLES 2.1 or OpenGL 2 and has anything that _vaguely resembles a processor_ should run this with no issues. Also, this will only run on love2d 11.3 or higher.
 
 #### What's done and what's coming up next?
